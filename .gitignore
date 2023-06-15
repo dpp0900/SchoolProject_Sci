@@ -1,0 +1,8 @@
+__pycache__/
+OCR*
+*.pyc
+response.json
+test.html
+.DS_Store
+static/img
+logs/
