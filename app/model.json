@@ -9,6 +9,8 @@
         "terms": {
             "원소": "Element",
             "원자": "Atom",
+            "양이온": "Cation",
+            "음이온": "Anion",
             "이온": "Ion",
             "분자": "Molecular",
             "초분자": "supramolecular",

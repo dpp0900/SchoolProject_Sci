@@ -93,8 +93,8 @@ def label(imgPath, imgName):
                     if not inferText in wordsData["blacklist"]:
                         verticesTOP, verticesLOW, verticesMID = getVertices(boundingPoly)
                         cv2.rectangle(img, verticesTOP,verticesLOW,(255,0,0))
-                        img = putTextPIL(img, field['inferText'].replace(word[0], word[1]), verticesMID, (0,0,0), "AppleGothic.ttf", 10)
-                        logger.write_log("label.py", f"trans {word[0]} as {word[1]}", time.time(), "debug")
+                        img = putTextPIL(img, field['inferText'].replace(word[0], word[1]), verticesMID, (0,0,0), "NanumGothic.ttf", 10)
+                        #logger.write_log("label.py", f"trans {word[0]} as {word[1]}", time.time(), "debug")
                         #imgData['images'][0]['fields'][idx] = None
                         break
                     else:
@@ -102,8 +102,8 @@ def label(imgPath, imgName):
                 elif word[1].lower() == inferText.lower() and word[1] != 0:
                     verticesTOP, verticesLOW, verticesMID = getVertices(boundingPoly)
                     cv2.rectangle(img, verticesTOP,verticesLOW,(255,0,0))
-                    img = putTextPIL(img, word[0], verticesMID, (0,0,0), "AppleGothic.ttf", 10)
-                    logger.write_log("label.py", f"trans {word[1]} as {word[0]}", time.time(), "debug")
+                    img = putTextPIL(img, word[0], verticesMID, (0,0,0), "NanumGothic.ttf", 10)
+                    #logger.write_log("label.py", f"trans {word[1]} as {word[0]}", time.time(), "debug")
                     #imgData['images'][0]['fields'][idx] = None
                     break
     cv2.imwrite("static/img/output/" + imgName, img)
