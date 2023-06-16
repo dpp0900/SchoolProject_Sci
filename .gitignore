@@ -4,5 +4,5 @@ OCR*
 response.json
 test.html
 .DS_Store
-static/img
+static/img/
 logs/

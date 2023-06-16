@@ -92,7 +92,7 @@ def label(imgPath, imgName):
                 if word[0] in inferText:
                     if not inferText in wordsData["blacklist"]:
                         verticesTOP, verticesLOW, verticesMID = getVertices(boundingPoly)
-                        cv2.rectangle(img, verticesTOP,verticesLOW,(255,0,0))
+                        cv2.rectangle(img, verticesTOP + verticesLOW,(255,0,0))
                         img = putTextPIL(img, field['inferText'].replace(word[0], word[1]), verticesMID, (0,0,0), "NanumGothic.ttf", 10)
                         #logger.write_log("label.py", f"trans {word[0]} as {word[1]}", time.time(), "debug")
                         #imgData['images'][0]['fields'][idx] = None
@@ -101,7 +101,7 @@ def label(imgPath, imgName):
                         continue
                 elif word[1].lower() == inferText.lower() and word[1] != 0:
                     verticesTOP, verticesLOW, verticesMID = getVertices(boundingPoly)
-                    cv2.rectangle(img, verticesTOP,verticesLOW,(255,0,0))
+                    cv2.rectangle(img, verticesTOP + verticesLOW,(255,0,0))
                     img = putTextPIL(img, word[0], verticesMID, (0,0,0), "NanumGothic.ttf", 10)
                     #logger.write_log("label.py", f"trans {word[1]} as {word[0]}", time.time(), "debug")
                     #imgData['images'][0]['fields'][idx] = None
@@ -109,5 +109,5 @@ def label(imgPath, imgName):
     cv2.imwrite("static/img/output/" + imgName, img)
 
 if __name__ == "__main__":
-    label("static/img/input/science.8511582.fp.png", "out.png")
+    label("static/img/input/Screenshot 2023-06-16 at 12.06.16 PM.png", "out.png")
     #checkPreviousCats("elements")
