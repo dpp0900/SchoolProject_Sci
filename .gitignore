@@ -6,3 +6,9 @@ test.html
 .DS_Store
 static/img/
 logs/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.ico
